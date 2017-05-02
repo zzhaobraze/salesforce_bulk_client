@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:45:18 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=CQmNXA4NTlysDKq_eIq7eA;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:45:18 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757919049","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:45:18 GMT
+recorded_with: VCR 3.0.3

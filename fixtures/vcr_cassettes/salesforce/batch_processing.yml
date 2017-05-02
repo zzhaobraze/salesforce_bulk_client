@@ -1,0 +1,1322 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:45:58 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=mwfOIKTnSeypj9ubR5WP2g;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:45:58 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757959416","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:45:59 GMT
+- request:
+    method: post
+    uri: https://instance.salesforce.com/services/async/39.0/job
+    body:
+      encoding: UTF-8
+      string: '{"operation":"query","object":"Account","contentType":"JSON"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:45:59 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=jOMJ3njfTJiq1HUX6oEEZA;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:45:59 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Location:
+      - "/services/async/39.0/job/7503600000BfwCuAAJ"
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"apiVersion":39.0,"assignmentRuleId":null,"concurrencyMode":"Parallel","contentType":"JSON","createdById":"00536000001qtbXAAQ","createdDate":"2017-05-02T20:45:59.000+0000","externalIdFieldName":null,"fastPathEnabled":false,"id":"7503600000BfwCuAAJ","numberBatchesCompleted":0,"numberBatchesFailed":0,"numberBatchesInProgress":0,"numberBatchesQueued":0,"numberBatchesTotal":0,"numberRecordsFailed":0,"numberRecordsProcessed":0,"numberRetries":0,"object":"Account","operation":"query","state":"Open","systemModstamp":"2017-05-02T20:45:59.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:00 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:00 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=nnGZWHmMTG6DftWlfYClYQ;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:00 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757960916","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:00 GMT
+- request:
+    method: post
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ/batch
+    body:
+      encoding: UTF-8
+      string: select Id, Name from Account where Id in ('00136000014tyLaAAI', '00136000014tyLpAAI')
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:01 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=FmZmQTWIStCBTEeTHMpheg;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:01 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Location:
+      - "/services/async/39.0/job/7503600000BfwCuAAJ/batch/7513600000CF5qFAAT"
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"createdDate":"2017-05-02T20:46:01.000+0000","id":"7513600000CF5qFAAT","jobId":"7503600000BfwCuAAJ","numberRecordsFailed":0,"numberRecordsProcessed":0,"state":"Queued","stateMessage":null,"systemModstamp":"2017-05-02T20:46:01.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:01 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:01 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=bfcb3t_VQ32YFUygI4F5RQ;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:01 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757962205","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:02 GMT
+- request:
+    method: post
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ
+    body:
+      encoding: UTF-8
+      string: '{"state":"Closed"}'
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:02 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=JLSutGkFSgufgZCCA6HYGA;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:02 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"apiVersion":39.0,"assignmentRuleId":null,"concurrencyMode":"Parallel","contentType":"JSON","createdById":"00536000001qtbXAAQ","createdDate":"2017-05-02T20:45:59.000+0000","externalIdFieldName":null,"fastPathEnabled":false,"id":"7503600000BfwCuAAJ","numberBatchesCompleted":0,"numberBatchesFailed":0,"numberBatchesInProgress":0,"numberBatchesQueued":1,"numberBatchesTotal":1,"numberRecordsFailed":0,"numberRecordsProcessed":0,"numberRetries":0,"object":"Account","operation":"query","state":"Closed","systemModstamp":"2017-05-02T20:45:59.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:03 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:03 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=Qy0BUVU5Rqe7xQmKnd-I6w;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:03 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757964009","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:03 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:04 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=GU2cKeNQQAipz30JEtt0rg;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:04 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"apiVersion":39.0,"assignmentRuleId":null,"concurrencyMode":"Parallel","contentType":"JSON","createdById":"00536000001qtbXAAQ","createdDate":"2017-05-02T20:45:59.000+0000","externalIdFieldName":null,"fastPathEnabled":false,"id":"7503600000BfwCuAAJ","numberBatchesCompleted":1,"numberBatchesFailed":0,"numberBatchesInProgress":0,"numberBatchesQueued":0,"numberBatchesTotal":1,"numberRecordsFailed":0,"numberRecordsProcessed":2,"numberRetries":0,"object":"Account","operation":"query","state":"Closed","systemModstamp":"2017-05-02T20:46:02.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:04 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:04 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=sY79INLEQv2KUUrdzY1isQ;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:04 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757965443","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:05 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ/batch/7513600000CF5qFAAT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:05 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=UvNmp6gcRwWA8xeS5ihI4A;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:05 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"createdDate":"2017-05-02T20:46:01.000+0000","id":"7513600000CF5qFAAT","jobId":"7503600000BfwCuAAJ","numberRecordsFailed":0,"numberRecordsProcessed":2,"state":"Completed","stateMessage":null,"systemModstamp":"2017-05-02T20:46:03.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:05 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:05 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=p3BGC9otQW-gYtrNi-Tr-w;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:05 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757968981","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:08 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:09 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=TkSGyN9ZR5Sq6KXC647c9A;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:09 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"apiVersion":39.0,"assignmentRuleId":null,"concurrencyMode":"Parallel","contentType":"JSON","createdById":"00536000001qtbXAAQ","createdDate":"2017-05-02T20:45:59.000+0000","externalIdFieldName":null,"fastPathEnabled":false,"id":"7503600000BfwCuAAJ","numberBatchesCompleted":1,"numberBatchesFailed":0,"numberBatchesInProgress":0,"numberBatchesQueued":0,"numberBatchesTotal":1,"numberRecordsFailed":0,"numberRecordsProcessed":2,"numberRetries":0,"object":"Account","operation":"query","state":"Closed","systemModstamp":"2017-05-02T20:46:02.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:11 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:11 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=sE-JEYGnSRi7AMIa3ka99A;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:11 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757971980","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:11 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:12 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=yFOhgfecT7i8dqDT0UeZsQ;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:12 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"apiVersion":39.0,"assignmentRuleId":null,"concurrencyMode":"Parallel","contentType":"JSON","createdById":"00536000001qtbXAAQ","createdDate":"2017-05-02T20:45:59.000+0000","externalIdFieldName":null,"fastPathEnabled":false,"id":"7503600000BfwCuAAJ","numberBatchesCompleted":1,"numberBatchesFailed":0,"numberBatchesInProgress":0,"numberBatchesQueued":0,"numberBatchesTotal":1,"numberRecordsFailed":0,"numberRecordsProcessed":2,"numberRetries":0,"object":"Account","operation":"query","state":"Closed","systemModstamp":"2017-05-02T20:46:02.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:12 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:12 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=FQby9o7NQUC9RLmqVJxyKw;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:12 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757973382","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:13 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ/batch
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:13 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=mq8If20_SIqC8-gRsy6rgA;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:13 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"batchInfo":[{"apexProcessingTime":0,"apiActiveProcessingTime":0,"createdDate":"2017-05-02T20:46:01.000+0000","id":"7513600000CF5qFAAT","jobId":"7503600000BfwCuAAJ","numberRecordsFailed":0,"numberRecordsProcessed":2,"state":"Completed","stateMessage":null,"systemModstamp":"2017-05-02T20:46:03.000+0000","totalProcessingTime":0}]}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:13 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:13 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=kGLJtKIZSyOZpLv03VMRig;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:13 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757974447","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:14 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:14 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=Tq6Bv354TJGH3lhKrfTdTg;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:14 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"apiVersion":39.0,"assignmentRuleId":null,"concurrencyMode":"Parallel","contentType":"JSON","createdById":"00536000001qtbXAAQ","createdDate":"2017-05-02T20:45:59.000+0000","externalIdFieldName":null,"fastPathEnabled":false,"id":"7503600000BfwCuAAJ","numberBatchesCompleted":1,"numberBatchesFailed":0,"numberBatchesInProgress":0,"numberBatchesQueued":0,"numberBatchesTotal":1,"numberRecordsFailed":0,"numberRecordsProcessed":2,"numberRetries":0,"object":"Account","operation":"query","state":"Closed","systemModstamp":"2017-05-02T20:46:02.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:15 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:15 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=C7yveXoHSLq51XSaAEqZig;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:15 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757976241","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:16 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ/batch/7513600000CF5qFAAT
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:16 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=q0DrbbVpSya9-w5VzIx9Qg;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:16 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"createdDate":"2017-05-02T20:46:01.000+0000","id":"7513600000CF5qFAAT","jobId":"7503600000BfwCuAAJ","numberRecordsFailed":0,"numberRecordsProcessed":2,"state":"Completed","stateMessage":null,"systemModstamp":"2017-05-02T20:46:03.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:16 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:16 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=e5NtlsedSGmUZB-UfpcMpA;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:16 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757977415","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:17 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:17 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=kr_TG94bT3yuWj4OKN0lcQ;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:17 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"apexProcessingTime":0,"apiActiveProcessingTime":0,"apiVersion":39.0,"assignmentRuleId":null,"concurrencyMode":"Parallel","contentType":"JSON","createdById":"00536000001qtbXAAQ","createdDate":"2017-05-02T20:45:59.000+0000","externalIdFieldName":null,"fastPathEnabled":false,"id":"7503600000BfwCuAAJ","numberBatchesCompleted":1,"numberBatchesFailed":0,"numberBatchesInProgress":0,"numberBatchesQueued":0,"numberBatchesTotal":1,"numberRecordsFailed":0,"numberRecordsProcessed":2,"numberRetries":0,"object":"Account","operation":"query","state":"Closed","systemModstamp":"2017-05-02T20:46:02.000+0000","totalProcessingTime":0}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:18 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:18 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=gsso3XR8TOavjblUNBmZhg;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:18 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757978820","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:18 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ/batch/7513600000CF5qFAAT/result
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:19 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=0Dh0fx6_S5CIpvVmSoAb6w;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:19 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '["75236000005bB4w"]'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:19 GMT
+- request:
+    method: post
+    uri: https://login.salesforce.com/services/oauth2/token
+    body:
+      encoding: US-ASCII
+      string: grant_type=password&client_id={SALESFORCE_OAUTH_CONSUMER_KEY}&client_secret={SALESFORCE_OAUTH_CONSUMER_SECRET}&username=%7BSALESFORCE_USERNAME%7D&password=%7BSALESFORCE_PASSWORD%7D{SALESFORCE_SECURITY_TOKEN}
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:19 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=cFtzHCBmRReJnV7svxQ-3w;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:19 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-cache, no-store
+      X-Readonlymode:
+      - 'false'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Vary:
+      - Accept-Encoding
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"access_token":"{ACCESS_TOKEN}","instance_url":"https://instance.salesforce.com","id":"{ID_URL}","token_type":"Bearer","issued_at":"1493757979877","signature":"{SIGNATURE}"}'
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:19 GMT
+- request:
+    method: get
+    uri: https://instance.salesforce.com/services/async/39.0/job/7503600000BfwCuAAJ/batch/7513600000CF5qFAAT/result/75236000005bB4w
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/json
+      X-Sfdc-Session:
+      - "{SESSION_ID}"
+      Authorization:
+      - "{AUTHORIZATION}"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 02 May 2017 20:46:20 GMT
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Security-Policy:
+      - referrer origin-when-cross-origin
+      - reflected-xss block;report-uri /_/ContentDomainCSPNoAuth?type=xss
+      Set-Cookie:
+      - BrowserId=rwSPlBgJQmyODUxgdOtsSw;Path=/;Domain=.salesforce.com;Expires=Sat,
+        01-Jul-2017 20:46:20 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |-
+        [ {
+          "attributes" : {
+            "type" : "Account",
+            "url" : "/services/data/v39.0/sobjects/Account/00136000014tyLaAAI"
+          },
+          "Id" : "00136000014tyLaAAI",
+          "Name" : "Test Upserted Account"
+        }, {
+          "attributes" : {
+            "type" : "Account",
+            "url" : "/services/data/v39.0/sobjects/Account/00136000014tyLpAAI"
+          },
+          "Id" : "00136000014tyLpAAI",
+          "Name" : "Test Upserted Account"
+        } ]
+    http_version: 
+  recorded_at: Tue, 02 May 2017 20:46:20 GMT
+recorded_with: VCR 3.0.3
