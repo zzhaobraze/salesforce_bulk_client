@@ -1,8 +1,11 @@
 require 'fire_poll'
+require 'multi_json'
 
 module SalesforceBulkClient
 
   class Job
+
+    BATCH_CHARACTER_LIMIT = 10000000
 
     attr_reader :job_id
 
@@ -44,8 +47,38 @@ module SalesforceBulkClient
     end
 
     def add_batch(batch)
-      add_batch_result = @connection.post_request("job/#{@job_id}/batch", batch)
-      add_batch_result.id
+      batch_groups = []
+      batch_size = MultiJson.dump(batch).size
+      if batch_size <= BATCH_CHARACTER_LIMIT
+        batch_groups << batch
+      else
+
+        # Split batch into sub-batches
+        batch_group = []
+        batch_group_size = MultiJson.dump(batch_group).size
+        batch.each do |record|
+          record_size = MultiJson.dump(record).size
+          if batch_group_size + record_size + 1 > BATCH_CHARACTER_LIMIT
+            batch_groups << batch_group.dup
+            batch_group.clear
+            batch_group_size = MultiJson.dump(batch_group).size
+          end
+          batch_group << record.dup
+          batch_group_size += record_size + 1
+        end
+        
+        # Add remaining records
+        if !batch_group.empty?
+          batch_groups << batch_group.dup
+          batch_group.clear
+        end
+
+      end
+
+      batch_groups.each do |batch_group|
+        add_batch_result = @connection.post_request("job/#{@job_id}/batch", batch_group)
+        add_batch_result.id
+      end
     end
 
     def check_job_status

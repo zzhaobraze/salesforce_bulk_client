@@ -5,7 +5,8 @@ SalesforceBulkClient is a Ruby gem which allows for integration with the Salesfo
 Although there are many other gems to choose from for this purpose, this gem offers the following features:
 
 * JSON is used for all API requests and responses (instead of XML) in order to reduce message size.
-* Splitting data into batches for inserts, updates, and deletes are handled automatically.
+* Splitting data into batches for inserts, updates, and deletes are handled automatically. Batches will be split
+  further if the 10,000,000 character limit per batch would be exceeded.
 * Large sets of data can be processed without pre-loading multiple batches.
 * Connect using the Restforce client instance.
 
