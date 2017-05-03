@@ -50,7 +50,7 @@ records = [ { Name: 'Test Account 1' }, { Name: 'Test Account 2' } ]
 result = bulk_client.insert(sobject, records)
 ```
 
-### Updating records
+### Upserting records
 
 ```ruby
 records = [ { Id: '00136000014tyyF', Name: 'Test Account 1' }, { Name: 'Test Account 2' } ]
