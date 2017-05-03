@@ -109,7 +109,7 @@ module SalesforceBulkClient
 
           batches_ready = @batch_ids.all? do |batch_id|
             batch_info = batch_info_map[batch_id] = self.check_batch_status(batch_id)
-            batch_info.state != 'Queued' && batch_info != 'InProgress'
+            batch_info.state != 'Queued' && batch_info.state != 'InProgress'
           end
 
           if batches_ready
@@ -126,9 +126,9 @@ module SalesforceBulkClient
       end
       job_status = self.check_job_status
 
-      batch_infos.each_with_index do |batch_state, i|
-        if batch_state.state == 'Completed' && return_result == true
-          batch_infos[i].merge!({ 'response' => self.get_batch_result(batch_state.id)})
+      batch_infos.each_with_index do |batch_info, i|
+        if batch_info.state == 'Completed' && return_result == true
+          batch_infos[i].merge!({ 'response' => self.get_batch_result(batch_info.id)})
         end
       end
 
