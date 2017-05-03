@@ -42,11 +42,12 @@ module SalesforceBulkClient
     def add_batches
       raise 'Records must be an array of hashes.' unless @records.is_a? Array
       @records.each_slice(@batch_size) do |batch|
-        @batch_ids << add_batch(batch)
+        @batch_ids.concat(add_batch(batch))
       end
     end
 
     def add_batch(batch)
+      batch_ids = []
       batch_groups = []
       batch_size = MultiJson.dump(batch).size
       if batch_size <= BATCH_CHARACTER_LIMIT
@@ -77,8 +78,10 @@ module SalesforceBulkClient
 
       batch_groups.each do |batch_group|
         add_batch_result = @connection.post_request("job/#{@job_id}/batch", batch_group)
-        add_batch_result.id
+        batch_ids << add_batch_result.id
       end
+
+      batch_ids
     end
 
     def check_job_status
