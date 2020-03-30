@@ -4,7 +4,7 @@ require 'salesforce_bulk_client/job'
 module SalesforceBulkClient
   class Client
 
-    DEFAULT_CLIENT_OPTIONS = { salesforce_api_version: '39.0' }
+    DEFAULT_CLIENT_OPTIONS = { salesforce_api_version: '41.0' }
 
     def initialize(restforce_client, options = {})
       options = {}.merge(DEFAULT_CLIENT_OPTIONS).merge(options)

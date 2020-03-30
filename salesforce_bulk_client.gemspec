@@ -20,11 +20,11 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'restforce', '~> 2.5', '>= 2.5.3'
+  spec.add_dependency 'restforce', '~> 4.2.2', '>= 4.2'
   spec.add_dependency 'multi_json', '~> 1.12', '>= 1.12.1'
   spec.add_dependency 'fire_poll', '~> 1.2', '>= 1.2.0'
 
-  spec.add_development_dependency 'bundler', '~> 1.14'
+  spec.add_development_dependency 'bundler', '~> 2.1.4'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.5'
   spec.add_development_dependency 'simplecov', '~> 0.14.1'
