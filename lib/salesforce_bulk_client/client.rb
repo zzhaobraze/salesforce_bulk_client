@@ -11,24 +11,24 @@ module SalesforceBulkClient
       @connection = SalesforceBulkClient::Connection.new(options[:salesforce_api_version], restforce_client)
     end
 
-    def delete(sobject, records, get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
-      do_operation('delete', sobject, records, nil, get_response, timeout, batch_size, poll_delay)
+    def delete(sobject, records, concurrency_mode = 'Parallel', get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
+      do_operation('delete', sobject, records, nil, concurrency_mode, get_response, timeout, batch_size, poll_delay)
     end
 
-    def insert(sobject, records, get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
-      do_operation('insert', sobject, records, nil, get_response, timeout, batch_size, poll_delay)
+    def insert(sobject, records, concurrency_mode = 'Parallel', get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
+      do_operation('insert', sobject, records, nil, concurrency_mode, get_response, timeout, batch_size, poll_delay)
     end
 
-    def query(sobject, query, get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
-      do_operation('query', sobject, query,nil, get_response, timeout, batch_size, poll_delay)
+    def query(sobject, query, concurrency_mode = 'Parallel', get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
+      do_operation('query', sobject, query,nil, concurrency_mode, get_response, timeout, batch_size, poll_delay)
     end
 
-    def update(sobject, records, get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
-      do_operation('update', sobject, records, nil, get_response, timeout, batch_size, poll_delay)
+    def update(sobject, records, concurrency_mode = 'Parallel', get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
+      do_operation('update', sobject, records, nil, concurrency_mode, get_response, timeout, batch_size, poll_delay)
     end
 
-    def upsert(sobject, records, external_field, get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
-      do_operation('upsert', sobject, records, external_field, get_response, timeout, batch_size, poll_delay)
+    def upsert(sobject, records, external_field, concurrency_mode = 'Parallel', get_response = false, batch_size = 10000, timeout = 3600, poll_delay = 5)
+      do_operation('upsert', sobject, records, external_field, concurrency_mode, get_response, timeout, batch_size, poll_delay)
     end
 
     def job_from_id(job_id)
@@ -43,7 +43,7 @@ module SalesforceBulkClient
 
     private
 
-    def do_operation(operation, sobject, records, external_field, get_response, timeout, batch_size, poll_delay)
+    def do_operation(operation, sobject, records, external_field, concurrency_mode, get_response, timeout, batch_size, poll_delay)
       job = SalesforceBulkClient::Job.new(
           operation: operation,
           sobject: sobject,
@@ -52,7 +52,7 @@ module SalesforceBulkClient
           connection: @connection
       )
 
-      job.create_job(batch_size)
+      job.create_job(batch_size, concurrency_mode)
       operation.to_s == 'query' ? job.add_query : job.add_batches
       job.close_job
       job.get_job_result(get_response, timeout, poll_delay)

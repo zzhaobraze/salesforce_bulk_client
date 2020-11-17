@@ -24,7 +24,7 @@ RSpec.describe SalesforceBulkClient do
     VCR.use_cassette('salesforce/insert') do |cassette|
       verify_env_is_set if cassette.originally_recorded_at.nil?
       records = [ { Name: 'Test Account' } ]
-      insert_results = $client.insert('Account', records, true)
+      insert_results = $client.insert('Account', records, 'Parallel', true)
       $test_record_ids = insert_results.batches.map { |batch| batch.response.map { |record| record.id } }&.flatten&.compact
       expect(insert_results.numberRecordsFailed).to eq(0)
       expect(insert_results.numberRecordsProcessed).to eq(records.size)
@@ -35,7 +35,7 @@ RSpec.describe SalesforceBulkClient do
     VCR.use_cassette('salesforce/update') do |cassette|
       verify_env_is_set if cassette.originally_recorded_at.nil?
       records = $test_record_ids.map { |record_id| { Id: record_id, Name: 'Test Updated Account' } }
-      update_results = $client.update('Account', records, true)
+      update_results = $client.update('Account', records, 'Parallel', true)
       expect(update_results.numberRecordsFailed).to eq(0)
       expect(update_results.numberRecordsProcessed).to eq(records.size)
     end
@@ -45,7 +45,7 @@ RSpec.describe SalesforceBulkClient do
     VCR.use_cassette('salesforce/upsert') do |cassette|
       verify_env_is_set if cassette.originally_recorded_at.nil?
       records = $test_record_ids.map { |record_id| { Id: record_id, Name: 'Test Upserted Account' } } + [ { Name: 'Test Upserted Account' }]
-      upsert_results = $client.upsert('Account', records, 'Id', true)
+      upsert_results = $client.upsert('Account', records, 'Id', 'Parallel', true)
       $test_record_ids = upsert_results.batches.map { |batch| batch.response.map { |record| record.id } }&.flatten&.compact
       expect(upsert_results.numberRecordsFailed).to eq(0)
       expect(upsert_results.numberRecordsProcessed).to eq(records.size)
@@ -77,7 +77,7 @@ RSpec.describe SalesforceBulkClient do
     VCR.use_cassette('salesforce/delete') do |cassette|
       verify_env_is_set if cassette.originally_recorded_at.nil?
       records = $test_record_ids.map { |record_id| { Id: record_id } }
-      delete_results = $client.delete('Account', records, true)
+      delete_results = $client.delete('Account', records, 'Parallel', true)
       expect(delete_results.numberRecordsFailed).to eq(0)
       expect(delete_results.numberRecordsProcessed).to eq(records.size)
     end

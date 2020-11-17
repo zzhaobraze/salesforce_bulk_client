@@ -19,9 +19,9 @@ module SalesforceBulkClient
       @batch_ids = []
     end
 
-    def create_job(batch_size)
+    def create_job(batch_size, concurrency_mode = 'Parallel')
       @batch_size = batch_size
-      create_job_request = { operation: @operation.to_s.downcase, object: @sobject, contentType: 'JSON' }
+      create_job_request = { operation: @operation.to_s.downcase, object: @sobject, contentType: 'JSON', concurrencyMode: concurrency_mode }
       if !@external_field.nil?
         create_job_request[:externalIdFieldName] = @external_field
       end
@@ -67,7 +67,7 @@ module SalesforceBulkClient
           batch_group << record.dup
           batch_group_size += record_size + 1
         end
-        
+
         # Add remaining records
         if !batch_group.empty?
           batch_groups << batch_group.dup
@@ -91,7 +91,7 @@ module SalesforceBulkClient
     def check_batch_status(batch_id)
       @connection.get_request("job/#{@job_id}/batch/#{batch_id}")
     end
-    
+
     def list_batches
       @connection.get_request("job/#{@job_id}/batch")&.batchInfo
     end
